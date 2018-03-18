@@ -18,16 +18,16 @@ def normalize_export(export):
     """take list of dict and convert to dict (key is the resource) with a list of dicts (start + end)
     in:
     [
-        {"start_time": "2018-01-04 00:00:00", "end_time": "2018-01-06 00:00:00", "resource_id": "Person A"},
-        {"start_time": "2018-01-30 00:00:00", "end_time": "2018-01-31 00:00:00", "resource_id": "Person A"},
-        {"start_time": "2018-01-13 00:00:00", "end_time": "2018-01-14 00:00:00", "resource_id": "Person B"},
-        {"start_time": "2018-01-04 00:00:00", "end_time": "2018-01-11 00:00:00", "resource_id": "Person B"}
+        {"start_time": "2018-01-04 00:00:00", "end_time": "2018-01-06 00:00:00", "resource_id": "11"},
+        {"start_time": "2018-01-30 00:00:00", "end_time": "2018-01-31 00:00:00", "resource_id": "11"},
+        {"start_time": "2018-01-13 00:00:00", "end_time": "2018-01-14 00:00:00", "resource_id": "47"},
+        {"start_time": "2018-01-04 00:00:00", "end_time": "2018-01-11 00:00:00", "resource_id": "47"}
     ]
     out:
-    {'Person A': [{'start_time': datetime.date(2018, 1, 4), 'end_time': datetime.date(2018, 1, 6)},
-                  {'start_time': datetime.date(2018, 1, 30), 'end_time': datetime.date(2018, 1, 31)}],
-     'Person B': [{'start_time': datetime.date(2018, 1, 13), 'end_time': datetime.date(2018, 1, 14)},
-                  {'start_time': datetime.date(2018, 1, 4), 'end_time': datetime.date(2018, 1, 11)}]}
+    {11: [{'start_time': datetime.date(2018, 1, 4), 'end_time': datetime.date(2018, 1, 6)},
+          {'start_time': datetime.date(2018, 1, 30), 'end_time': datetime.date(2018, 1, 31)}],
+     47: [{'start_time': datetime.date(2018, 1, 13), 'end_time': datetime.date(2018, 1, 14)},
+          {'start_time': datetime.date(2018, 1, 4), 'end_time': datetime.date(2018, 1, 11)}]}
     """
     normalized = {}
     for appointment in export:
