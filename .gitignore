@@ -1,0 +1,5 @@
+config.py
+venv/
+*.xls
+*.xlsx
+.idea

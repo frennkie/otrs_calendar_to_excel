@@ -1,0 +1,3 @@
+openpyxl==2.4.8
+tablib
+pymysql
