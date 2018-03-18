@@ -11,22 +11,23 @@ edition.
 
 ### Installation
 
+System
+
 ```
 apt-get install python-virtualenv
-virtualenv -p python3 venv
-source venv/bin/activate 
 ```
 
 OR 
 
 ```
 yum install python-virtualenv
+```
+
+Python
+
+```
 virtualenv -p python3 venv
 source venv/bin/activate
-```
-
-
-```
 pip install -U pip
 pip install -r requirements.txt
 ```
