@@ -112,7 +112,7 @@ def get_calendars(con):
 
 def get_calendar_appointments(con, cal_id):
     """return list of appointments
-    e.g. {1: {'id': 1, 'name': 'Foobar'}, {'id': 2, 'name': 'Barfoo'}}
+    e.g. [{'id': 1, 'name': 'Foobar'}, {'id': 2, 'name': 'Barfoo'}]
     """
     try:
         with con.cursor() as cur:
@@ -124,7 +124,6 @@ def get_calendar_appointments(con, cal_id):
 
             cur.execute(sql, {"calendar_id": cal_id})
 
-        # return {x['id']: x for x in cur.fetchall()}
         return cur.fetchall()
 
     except Exception as err:
