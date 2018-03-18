@@ -5,7 +5,7 @@ installation and exports a single calendar to an Excel spreadsheet. The
 current, last and next year are included.
 
 Only calendar appointments that have a resource assigned will be included. 
-Assigning resources it a feature of the commercial OTRS Business Solution 
+Assigning resources is a feature of the commercial OTRS Business Solution 
 edition.
 
 
