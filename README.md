@@ -1,7 +1,7 @@
 # OTRS Calendar to Excel
 
 This Python script connects directly to the MySQL/MariaDB of an OTRS 
-installation an exports a single calendar to an Excel spreadsheet. The
+installation and exports a single calendar to an Excel spreadsheet. The
 current, last and next year are included.
 
 Only calendar appointments that have a resource assigned will be included. 
