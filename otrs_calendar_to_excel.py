@@ -20,6 +20,7 @@ def normalize_export(export):
     [
         {"start_time": "2018-01-04 00:00:00", "end_time": "2018-01-06 00:00:00", "resource_id": "11"},
         {"start_time": "2018-01-30 00:00:00", "end_time": "2018-01-31 00:00:00", "resource_id": "11"},
+        {"start_time": "2018-01-23 00:00:00", "end_time": "2018-01-24 00:00:00", "resource_id": ""},
         {"start_time": "2018-01-13 00:00:00", "end_time": "2018-01-14 00:00:00", "resource_id": "47"},
         {"start_time": "2018-01-04 00:00:00", "end_time": "2018-01-11 00:00:00", "resource_id": "47"}
     ]
@@ -47,7 +48,7 @@ def normalize_export(export):
                     }
                 )
         except TypeError:
-            # ignore appointments with an empty `resource_id`. int() will raise TypeError on None
+            # ignore appointments with an empty `resource_id` -> int() will raise TypeError on None
             pass
 
     return normalized
@@ -161,8 +162,7 @@ def main():
     # create sheets for this year, last year and next year
     year = datetime.utcnow().year
     for data, year in ((data_cur, year), (data_last, year - 1), (data_next, year + 1)):
-        # for month in range(1, 13):
-        for month in range(1, 5):  # TODO (for dev only use Jan - April)
+        for month in range(1, 13):
             data.append_separator("")
             data.append_separator("{} {}".format(calendar.month_name[month], year))
             for item in c.itermonthdates(year, month):
